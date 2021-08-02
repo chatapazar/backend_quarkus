@@ -101,7 +101,7 @@ pipeline {
         }
       }
     }
-    Publish the uberjar file to Nexus
+    //Publish the uberjar file to Nexus
     stage('Publish to Nexus') {
       steps {
         dir('code') {
