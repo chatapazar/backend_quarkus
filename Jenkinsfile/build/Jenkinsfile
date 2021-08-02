@@ -101,17 +101,17 @@ pipeline {
         }
       }
     }
-    // Publish the uberjar file to Nexus
-    // stage('Publish to Nexus') {
-    //   steps {
-    //     dir('code') {
-    //       echo "Publish to Nexus"
-          //sh "${mvnCmd} deploy -Dquarkus.package.uber-jar=true -Dinternal.repo.username=${nexusUser} -Dinternal.repo.password=${nexusPassword} -DskipTests=true -DaltDeploymentRepository=nexus::default::${env.NEXUS_SVC}/repository/maven-releases"
-    //       sh "${mvnCmd} deploy -Dquarkus.package.uber-jar=true -Dinternal.repo.username=${nexusUser} -Dinternal.repo.password=${nexusPassword} -DskipTests=true"
+    Publish the uberjar file to Nexus
+    stage('Publish to Nexus') {
+      steps {
+        dir('code') {
+          echo "Publish to Nexus"
+          sh "${mvnCmd} deploy -Dquarkus.package.uber-jar=true -Dinternal.repo.username=${nexusUser} -Dinternal.repo.password=${nexusPassword} -DskipTests=true -DaltDeploymentRepository=nexus::default::${env.NEXUS_SVC}/repository/maven-releases"
+          //sh "${mvnCmd} deploy -Dquarkus.package.uber-jar=true -Dinternal.repo.username=${nexusUser} -Dinternal.repo.password=${nexusPassword} -DskipTests=true"
 
-    //     }
-    //   }
-    // }
+        }
+      }
+    }
     // Create Build Config
     stage('Create Build Config') {
       when {
