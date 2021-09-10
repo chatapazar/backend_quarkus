@@ -14,7 +14,7 @@ spec:
   source:
     contextDir: Jenkinsfile/build
     git:
-      ref: 1.13.4.Final
+      ref: 1.13.4
       uri: https://github.com/chatapazar/backend_quarkus.git
     # sourceSecret:
     #   name: gogs-secret
